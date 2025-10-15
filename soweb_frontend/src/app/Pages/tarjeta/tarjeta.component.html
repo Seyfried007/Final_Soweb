@@ -1,0 +1,104 @@
+
+<div class="payment-form-container">
+  <h2>Formulario de Pago con Tarjeta</h2>
+  <form (ngSubmit)="onSubmit()" #paymentForm="ngForm" [class.ng-invalid]="paymentForm.invalid" [class.ng-valid]="paymentForm.valid">
+    <div class="form-group">
+      <label for="cardholderName">Nombre del Titular</label>
+      <input
+        type="text"
+        id="cardholderName"
+        name="cardholderName"
+        [(ngModel)]="cardholderName"
+        required
+        minlength="3"
+        placeholder="Nombre completo"
+        #cardholderNameInput="ngModel"
+      />
+      <div class="error" *ngIf="cardholderNameInput.invalid && cardholderNameInput.touched">
+        El nombre es obligatorio y debe tener al menos 3 caracteres.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cardNumber">Número de Tarjeta</label>
+      <input
+        type="text"
+        id="cardNumber"
+        name="cardNumber"
+        [(ngModel)]="cardNumber"
+        required
+        pattern="\\d{16}"
+        maxlength="16"
+        placeholder="1234567890123456"
+        #cardNumberInput="ngModel"
+        (input)="onCardNumberInput()"
+      />
+      <div class="error" *ngIf="cardNumberInput.touched && cardNumber.length > 0 && cardNumber.length < 16">
+        El número de tarjeta debe tener 16 dígitos.
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group small">
+        <label for="expiryDate">Fecha de Expiración (MM/AA)</label>
+        <input
+          type="text"
+          id="expiryDate"
+          name="expiryDate"
+          [(ngModel)]="expiryDate"
+          placeholder="MM/AA"
+          #expiryDateInput="ngModel"
+          (input)="onExpiryDateInput()"
+        />
+        <!-- Se elimina la validación visual de fecha de expiración -->
+        <!-- <div class="error" *ngIf="expiryDateInput.touched && (expiryDate.length > 0 && !isExpiryDateValid())">
+          Formato inválido. Ejemplo: 08/25
+        </div> -->
+      </div>
+
+      <div class="form-group small">
+        <label for="cvv">CVV</label>
+        <input
+          type="password"
+          id="cvv"
+          name="cvv"
+          [(ngModel)]="cvv"
+          required
+          pattern="\\d{3}"
+          maxlength="3"
+          placeholder="123"
+          #cvvInput="ngModel"
+          (input)="onCvvInput()"
+        />
+        <div class="error" *ngIf="cvvInput.touched && (cvv.length > 0 && cvv.length < 3)">
+          El CVV debe tener 3 dígitos.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group card-types">
+      <label>Tipo de Tarjeta</label>
+      <div class="card-icons">
+        <img src="assets/visa.svg" alt="Visa" [class.selected]="cardType === 'visa'" (click)="selectCardType('visa')" />
+        <img src="assets/mastercard.svg" alt="Mastercard" [class.selected]="cardType === 'mastercard'" (click)="selectCardType('mastercard')" />
+      </div>
+      <div class="error" *ngIf="!cardType && formSubmitted">
+        Por favor, seleccione un tipo de tarjeta.
+      </div>
+    </div>
+
+    <!-- Eliminado el campo ID de Transacción según solicitud -->
+
+    <div class="form-group">
+      <label>Productos</label>
+      <div class="products-list">
+        <div *ngFor="let producto of products" class="product-item">
+          <img [src]="producto.imagen" alt="Producto" class="product-image" />
+          <span class="product-abreviado">{{ producto.abreviado }}</span>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Pagar Ahora - S/ {{ totalFinal.toFixed(2) }}</button>
+  </form>
+</div>

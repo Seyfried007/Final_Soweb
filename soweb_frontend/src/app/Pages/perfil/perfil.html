@@ -1,0 +1,47 @@
+<div class="config-container">
+  <h2>Configuración de cuenta</h2>
+  <div class="config-content">
+    
+    <div class="config-sidebar">
+      <button class="active">👤 Config. Perfil</button>
+      <button > Contraseña</button>
+      <button > Verificación</button>
+    </div>
+
+    <div class="config-form">
+      <div class="profile-img-container">
+        <img [src]="imagenUrl" alt="Imagen de perfil" class="profile-img" />
+        <label class="upload-icon">
+          <input type="file" accept="image/*" (change)="onImageChange($event)" hidden />
+          📷
+        </label>
+        <button class="btn-update">Actualizar</button>
+      </div>
+
+      <form>
+        <div class="form-row">
+          <input type="text" placeholder="Nombres" />
+          <input type="text" placeholder="Apellidos" />
+        </div>
+
+        <div class="form-row">
+          <input type="email" placeholder="Correo electrónico" />
+          <input type="text" placeholder="N° Celular"  />
+        </div>
+
+        <div class="form-row">
+          <select >
+            <option>Masculino</option>
+            <option>Femenino</option>
+          </select>
+          <input type="text" placeholder="DNI" />
+        </div>
+
+        <textarea placeholder="Dirección" ></textarea>
+
+        <button type="button" class="btn-save">Guardar</button>
+      </form>
+    </div>
+
+  </div>
+</div>

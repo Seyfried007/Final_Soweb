@@ -1,0 +1,119 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Menú Lateral ACS</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="notificaciones.component.css" />
+
+<div class="container" [class.sidebar-open]="sidebarOpen">
+  <aside class="sidebar">
+    <div class="p-4 logo-section">
+      <img src="assets/Logo-Blanco-Acs.svg" alt="Logo ACS" />
+    </div>
+
+    <nav class="nav flex-column">
+      <a [routerLink]="'/recibo'" class="sidebar-link"><i class="fas fa-id-card"></i> <span class="link-text">Recibos</span></a>
+      <a [routerLink]="'/compras'" class="sidebar-link"><i class="fas fa-file-alt"></i> <span class="link-text">Compras</span></a>
+      <a [routerLink]="'/notificaciones'" class="sidebar-link"><i class="fas fa-bell"></i> <span class="link-text">Notificaciones</span></a>
+      <a href="#" class="sidebar-link"><i class="fa-solid fa-right-from-bracket"></i> <span class="link-text">Cerrar Sesión</span></a>
+    </nav>
+
+    <div class="profile-section mt-auto p-4">
+      <div class="d-flex align-items-center" style="position: relative;" (click)="$event.stopPropagation()">
+        <img
+          src="https://randomuser.me/api/portraits/men/34.jpg"
+          alt="User"
+          class="rounded-circle"
+          (click)="toggleProfileMenu()"
+          style="cursor: pointer;"
+        />
+        <div class="profile-info">
+          <h6 class="mb-0">Jonathan</h6>
+          <small class="text-muted">Usuario</small>
+        </div>
+
+        <div *ngIf="profileMenuOpen" class="profile-dropdown">
+          <ul>
+            <li (click)="onVolver()">Volver</li>
+            <li (click)="onConfiguracion()">Configuración</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="content-container">
+  <h2 class="title">Notificaciones</h2>
+
+  <div class="notification">
+    <span class="icon green"></span>
+    <div class="text">
+      <strong>Registro Exitoso de Certificado</strong>
+      <p>Tu certificado de 'Manipulación de Alimentos' ha sido registrado correctamente.</p>
+    </div>
+    <div class="time"><i class="fa-solid fa-clock"></i>2 mayo 2025 - 09:30 a.m.</div>
+  </div>
+
+  <div class="notification">
+    <span class="icon red"></span>
+    <div class="text">
+      <strong>Mensaje del Soporte</strong>
+      <p>Has recibido una respuesta sobre tu consulta de tiempos de entrega.</p>
+    </div>
+    <div class="time"><i class="fa-solid fa-clock"></i>28 abril 2025 - 08:20 a.m.</div>
+  </div>
+
+  <div class="notification">
+    <span class="icon purple"></span>
+    <div class="text">
+      <strong>Actualización de Estado</strong>
+      <p>Tu solicitud de "Certificado de Seguridad Industrial" ha pasado a estado En Revisión.</p>
+    </div>
+    <div class="time"><i class="fa-solid fa-clock"></i>10 abril 2025 - 02:10 p.m.</div>
+  </div>
+
+  <div class="notification">
+    <span class="icon blue"></span>
+    <div class="text">
+      <strong>Conexión Asignada</strong>
+      <p>Se te ha asignado un asesor: Laura Gutiérrez para ayudarte con tu proceso.</p>
+    </div>
+    <div class="time"><i class="fa-solid fa-clock"></i>02 abril 2025 - 05:40 p.m.</div>
+  </div>
+
+  <div class="notification">
+    <span class="icon orange"></span>
+    <div class="text">
+      <strong>Mensaje del Asesor Laura Gutiérrez</strong>
+      <p>Hola, estoy aquí para ayudarte a completar tu certificación correctamente.</p>
+    </div>
+    <div class="time"><i class="fa-solid fa-clock"></i>28 marzo 2025 - 03:40 p.m.</div>
+  </div>
+
+  <div class="notification">
+    <span class="icon green"></span>
+    <div class="text">
+      <strong>Pago Confirmado</strong>
+      <p>Tu pago por el "Certificado de Primeros Auxilios" ha sido confirmado.</p>
+    </div>
+    <div class="time"><i class="fa-solid fa-clock"></i>22 marzo 2025 - 10:30 a.m.</div>
+  </div>
+
+  <div class="pagination">
+    <span class="active">1</span>
+    <span>2</span>
+    <span>3</span>
+  </div>
+</div>
+
+
+
+  <div class="mobile-header">
+    <button (click)="toggleSidebar()" class="menu-toggle" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <main class="main-content" (click)="closeSidebarOnMobile()">
+
+  
+

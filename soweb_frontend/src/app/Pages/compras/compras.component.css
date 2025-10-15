@@ -1,0 +1,493 @@
+/* Reset y estilos base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', monospace;
+}
+
+body, html {
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 1000px;
+  width: 100vw;
+  background-color: #f0f8ff;
+  overflow: hidden;
+}
+
+.sidebar {
+  background-color: #0d1117;
+  color: white;
+  width: 250px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  bottom: 0;
+  z-index: 1500;
+  transition: left 0.3s ease;
+}
+.nose h1{
+  background-color: red;
+  width: 100%;
+}
+
+.logo-section {
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+}
+
+.logo-section img {
+  max-width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.nav.flex-column {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 0 !important;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding-left: 1rem !important;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+  gap: 0.5rem !important;
+  white-space: nowrap;
+  justify-content: flex-start !important;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  background-color: #1f2937;
+  color: #e64b47;
+}
+
+.sidebar-link i {
+  margin-right: 0.5rem !important;
+  min-width: auto !important;
+  font-size: 1.25rem;
+}
+
+.profile-section {
+  padding: 1rem 1rem 2rem 1rem;
+  border-top: 1px solid #1f2937;
+  margin-top: auto;
+  background-color: transparent;
+  display: flex !important;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  max-height: 90px;
+  text-align: left;
+  padding-bottom: 4rem;
+}
+
+.profile-section > div.d-flex {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+
+.profile-section img {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #e64b47;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.profile-section .profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.profile-section .profile-info h6 {
+  color: white;
+  font-weight: 800;
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-section .profile-info small {
+  color: #6c757d;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main-content {
+  padding: 3rem 2rem;
+  background-color: #f0f8ff;
+  min-width: 0;
+  word-wrap: break-word;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+
+.main-content h2 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.main-content p.text-muted {
+  color: #6c757d;
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+.mobile-header {
+  display: none;
+  background-color: #0d1117;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1600;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: 1690px;
+  }
+
+  .sidebar {
+    left: -250px;
+  }
+
+  .container.sidebar-open .sidebar {
+    left: 0;
+  }
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 4.5rem 1rem 1rem 1rem;
+    height: auto;
+    overflow-y: visible;
+  }
+}
+
+.profile-dropdown {
+  position: absolute;
+  bottom: 70px; 
+  right: 0;
+  background: white;
+  color: #333;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.2);
+  width: 170px;
+  z-index: 2000;
+}
+
+.profile-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.profile-dropdown ul li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.profile-dropdown ul li:hover {
+  background-color: #e64b47;
+  color: white;
+  border-radius: 4px;
+}
+
+.content-container {
+  border: #d42c2c;
+  padding: 2rem;
+  margin-left: 400px; 
+  max-width: 1000px;
+  margin-right: auto;
+  background-color: #f9f9f9;
+  min-height: 50vh;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #d42c2c;
+  margin-bottom: 1.5rem;
+}
+
+.notification {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-left: 5px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.notification .icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 15px;
+  margin-top: 6px;
+}
+
+.notification .text {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.notification .text p {
+  margin: 0.2rem 0 0;
+  color: #555;
+}
+
+.notification .time {
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.icon.green { background-color: #28a745; }
+.icon.red { background-color: #dc3545; }
+.icon.purple { background-color: #6f42c1; }
+.icon.blue { background-color: #007bff; }
+.icon.orange { background-color: #fd7e14; }
+
+
+@media (max-width: 768px) {
+  .content-container {
+    margin-left: 0;
+    padding: 1rem;
+    padding-top: 5rem;
+    padding-right: 3rem;
+    max-height: max-content;
+  }
+}
+
+.compras-content {
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+   border: #d42c2c;
+  margin-left: 650px; 
+  max-width: 2000px;
+  margin-right: auto;
+  background-color: #f9f9f9;
+  min-height: 50vh;
+
+}
+
+.compras-content h2 {
+  color: #e74c3c;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.compras-realizadas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.compra-item {
+  background: white;
+  border-radius: 8px;
+  max-width: 220px;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.compra-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.compra-item .titulo {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.compra-item .precio {
+  font-size: 0.85rem;
+  color: #333;
+  margin: 0.3rem 0;
+}
+
+.boton-comprado {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: default;
+}
+
+.seguimiento-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.seguimiento-item img {
+  width: 60px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.seguimiento-detalle {
+  flex: 1;
+  position: relative;
+}
+
+.seguimiento-detalle .titulo {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.barra-progreso {
+  height: 10px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.barra-progreso::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.en-proceso::before {
+  width: 65%;
+  background: #f4c542;
+}
+
+.enviado::before {
+  width: 90%;
+  background: #f26c6c;
+}
+
+.estado {
+  font-size: 0.8rem;
+  color: #888;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.pagination span {
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #eee;
+  font-weight: 600;
+}
+
+.pagination .active {
+  background-color: #333;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .compras-content{
+    margin-left: 0;
+    padding: 1rem;
+    padding-top: 5rem;
+    max-height: max-content;
+    padding-left: 5rem;
+  }
+  .compras-realizadas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .seguimiento-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .seguimiento-detalle {
+    width: 100%;
+  }
+
+  .estado {
+    position: static;
+  }
+}
+
+
+
+

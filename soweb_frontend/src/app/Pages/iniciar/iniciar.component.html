@@ -1,0 +1,304 @@
+    <title>ACS Proyecto</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="iniciar.component.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <!-- iconos -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
+
+    <!-- Fuente usada de letra-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+
+<header>
+  <div class="card-header" style="background-color: #000000; padding: 15px;">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <!-- Logo -->
+      <a class="navbar-brand">
+        <img src="assets/Logo-Blanco-Acs 1.svg" class="img-fluid" alt="Logo ACS" width="300" height="85" />
+      </a>
+
+      <!-- Hamburguesa -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Contenido colapsable -->
+      <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <!-- Barra de navegación -->
+        <ul style="padding: 20px; font-family: 'Poppins', monospace; font-size: 20px" class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="'/inicio'" style="color: white; margin-left: 20px">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/nosotros'" style="color: white; margin-left: 20px">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/catalogo'" style="color: white; margin-left: 20px">Catálogo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/noticia'" style="color: white; margin-left: 20px">Noticias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/soporte'" style="color: white; margin-left: 20px">Soporte</a>
+          </li>
+        </ul>
+
+        <!-- Carrito y botón de sesión -->
+        <div class="d-flex align-items-center">
+          <div
+            style="
+              border: 1px solid white;
+              color: white;
+              padding: 5px 10px;
+              border-radius: 5px;
+              margin-right: 20px;
+              font-family: 'Poppins', monospace;
+            "
+          >
+            s/ 0.00 <i class="fa fa-shopping-cart"></i>
+          </div>
+          <a [routerLink]="'/login'" class="btn btn-danger" style="font-family: 'Poppins', monospace">
+            Iniciar Sesión
+          </a>
+
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar alternativo para pantallas pequeñas -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-lg-none" style="background-color: #000000; padding: 10px;">
+      <!-- Contenido colapsable -->
+      <div class="collapse navbar-collapse" id="navbarAltContent">
+        <ul style="font-family: 'Poppins', monospace; font-size: 16px;" class="navbar-nav">
+          <li class="nav-item active"><a class="nav-link" [routerLink]="'/inicio'" style="color: white;">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="'/nosotros'" style="color: white;">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="'/catalogo'" style="color: white;">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="'/noticia'" style="color: white;">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="'/soporte'" style="color: white;">Soporte</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="main-content" style="min-height: 300px; position: relative;">
+  <section class="hero-section">
+    <img src="assets/standard-quality-control-concept-m 1.svg" alt="Certificación" class="hero-bg" />
+    <div class="hero-content">
+      <p class="hero-text">CERTIFICA HOY TU EMPRESA<br />CON NOSOTROS</p>
+      <a routerLink="/login" class="hero-button">Catálogo</a>
+    </div>
+  </section>
+
+  <!-- Título centrado -->
+  <div class="trabajar-text text-center">¿Por qué trabajar con nosotros?</div>
+
+  <!-- Íconos y textos centrados y reordenados -->
+  <div class="imagenes-row text-center">
+    <!-- 1. Mapa -->
+    <div class="imagen-container">
+      <img src="assets/mapa.svg" alt="Mapa" class="imagen-item" />
+      <div class="imagen-text">
+        <h3>Organismos Peruano</h3>
+        <p>
+          Garantizamos eficiencia, confianza e<br />
+          imparcialidad en nuestras auditorías de<br />
+          Certificación con estándares de nivel internacional.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. Estrellas -->
+    <div class="imagen-container">
+      <img src="assets/equipo.svg" alt="Equipo" class="imagen-item" />
+      <div class="imagen-text">
+        <h3>Nuestra Experiencia</h3>
+        <p>
+          Contamos con staff de auditores<br />
+          competentes y calificados con certificaciones<br />
+          nacionales e internacionales.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3. Mano -->
+    <div class="imagen-container">
+      <img src="assets/coop.svg" alt="Coop" class="imagen-item" />
+      <div class="imagen-text">
+        <h3>Nuestro Compromiso</h3>
+        <p>
+          ACS es una empresa de calidad donde<br />
+          aplicamos confianza, imparcialidad, competencia<br />
+          e integridad a nuestros clientes.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección ¿Por qué elegirnos? -->
+  <div class="elegirnos-rectangle">
+    <div class="elegirnos-text">¿Por qué elegirnos?</div>
+  </div>
+
+  <div class="elegirnos-cards-container">
+    <!-- Calidad -->
+    <div class="elegirnos-card">
+      <div class="elegirnos-img-wrapper">
+        <img src="assets/man-working-warehouse 1.svg" alt="Calidad" class="elegirnos-img" />
+        <div class="elegirnos-overlay-text">Calidad</div>
+      </div>
+      <p class="elegirnos-description">
+        En ACS ofrecemos autenticidad, confianza y seguridad en todos nuestros
+        servicios de certificación, inspección, análisis y ensayo. Verificamos que
+        nuestro servicio sea de alta calidad para alcanzar resultados positivos.
+      </p>
+    </div>
+
+    <!-- Ética -->
+    <div class="elegirnos-card">
+      <div class="elegirnos-img-wrapper">
+        <img src="assets/close-up-people-business-meeting 1.svg" alt="Ética" class="elegirnos-img" />
+        <div class="elegirnos-overlay-text">Ética</div>
+      </div>
+      <p class="elegirnos-description">
+        Desde nuestra fundación el éxito de ACS se ha basado en una cultura y trabajo ético en todos
+        nuestros servicios a lo largo de nuestra trayectoria. La integridad e imparcialidad es nuestro
+        activo más preciado, tanto dentro de la empresa como con terceros.
+      </p>
+    </div>
+
+    <!-- Compromiso -->
+    <div class="elegirnos-card">
+      <div class="elegirnos-img-wrapper">
+        <img src="assets/happy-businesswoman-wearing-suit-shaking-male-hand-focus-handshake 1.svg" alt="Compromiso" class="elegirnos-img" />
+        <div class="elegirnos-overlay-text">Compromiso</div>
+      </div>
+      <p class="elegirnos-description">
+        Garantizamos el compromiso en todos los servicios y el desarrollo de nuestras
+        actividades diarias con el objetivo de agregar valor que contribuyan al éxito de nuestros clientes.
+      </p>
+    </div>
+  </div>
+
+  <!-- Productos más comprados -->
+  <div class="productos-mas-comprados">
+    PRODUCTOS MÁS <span class="comprados-red">COMPRADOS</span>
+  </div>
+
+  <div class="image24-container">
+    <div class="product-card">
+      <img src="assets/D101-600x842.png" alt="D101 ISO 9001:2015" class="image24" />
+      <p>D101 Kit de Formatería para Implementar la ISO 9001:2015</p>
+      <p><span class="product-old-price">$259.00</span> <span class="product-price">$149.00</span></p>
+      <button class="boton-carrito">Añadir Carrito</button>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/D103-1-600x842.png" alt="D103 ISO 14001:2015" class="image24" />
+      <p>D103 Kit de Formatería para Implementar la ISO 14001:2015</p>
+      <p><span class="product-old-price">$250.00</span> <span class="product-price">$149.00</span></p>
+      <button class="boton-carrito">Añadir Carrito</button>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/D152-600x842.png" alt="D152 ISO 45001:2018" class="image24" />
+      <p>D152 Kit de Formatería para Implementar la ISO 45001:2018</p>
+      <p><span class="product-old-price">$359.00</span> <span class="product-price">$149.00</span></p>
+      <button class="boton-carrito">Añadir Carrito</button>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/D159-600x842.png" alt="D159 ISO 37001:2016" class="image24" />
+      <p>D159 Kit de Formatería para Implementar la ISO 37001:2016</p>
+      <p><span class="product-old-price">$459.00</span> <span class="product-price">$189.00</span></p>
+      <button class="boton-carrito">Añadir Carrito</button>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/D106-600x842.png" alt="D106 ISO 27001:2022" class="image24" />
+      <p>D106 Kit de Formatería para Implementar la ISO 27001:2022</p>
+      <p><span class="product-old-price">$519.00</span> <span class="product-price">$259.00</span></p>
+      <button class="boton-carrito">Añadir Carrito</button>
+    </div>
+  </div>
+</div>
+
+
+
+<footer>
+      <div
+        class="card-footer"
+        style="background-color: #f0f0f0; padding: 40px 20px; text-align: center; font-family: 'poppins', monospace"
+      >
+        <div class="container">
+          <!-- Logo y descripción -->
+          <div class="row">
+            <div class="col-md-6">
+              <img src="assets/image 21.svg" class="img-fluid" alt="ACS Logo" width="350" height="auto" style="padding: 15px" />
+              <p>
+                Somos un organismo de certificación peruano, que brinda auditorías de certificación, auditorías a proveedores y evaluaciones de cumplimiento bajo los requerimientos de diversos estándares internacionales.
+              </p>
+            </div>
+            <!-- Enlaces y contacto -->
+            <div class="col-md-6" style="padding-top: 50px">
+              <div class="row">
+                <div class="col-6">
+                  <h5>Nuestros Enlaces</h5>
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="text-dark text-decoration-none">Inicio</a></li>
+                    <li><a href="#" class="text-dark text-decoration-none">Nosotros</a></li>
+                    <li><a href="#" class="text-dark text-decoration-none">Servicios</a></li>
+                    <li><a href="#" class="text-dark text-decoration-none">Contacto</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-6">
+                  <h5>Información de Contacto</h5>
+                  <ul class="list-unstyled">
+                    <li><i class="fa fa-map-marker"></i> Lima, Perú</li>
+                    <li><i class="fa fa-envelope"></i> <a href="mailto:ACS@gmail.com" class="text-dark text-decoration-none"></a>ACS&#64;gmail.com</li>
+                    <li><i class="fa fa-phone"></i> 999 456 123</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Copyright -->
+          <div style="margin-top: 20px;">
+            <hr style="border-width: 3px" />
+            <p>© Copyright 2025 - ACS</p>
+          </div>
+        </div>
+      </div>
+    </footer>

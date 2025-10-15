@@ -1,0 +1,155 @@
+/* Copiado de catalogo.component.css para mantener estilos de header y footer */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: block;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+}
+
+body > header,
+body > footer {
+  flex-shrink: 0;
+}
+
+body > div.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 120px);
+  margin-bottom: 0;
+}
+
+/* Estilos para header y footer copiados de catalogo.component.css */
+/* Puedes agregar más estilos específicos para comprar aquí si es necesario */
+
+/* Estilos para la tabla y contenedores en comprar */
+
+.comprar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 1170px;
+  margin: 20px 0 20px 0;
+  padding-left: 62px; /* Mueve la tabla un poco a la derecha */
+  
+}
+
+.comprar-table {
+  width: 920px;
+  height: 406px;
+  overflow-y: auto;
+}
+
+.comprar-table td:first-child {
+  width: 690px;
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-family: "Anek Tamil", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 512px;
+  justify-content: flex-start;
+}
+
+.comprar-table td:nth-child(2),
+.comprar-table td:nth-child(3),
+.comprar-table td:nth-child(4) {
+  font-family: "Anek Tamil", sans-serif;
+  font-size: 16px;
+}
+
+.comprar-table td:first-child img {
+  width: 60.57px;
+  height: 85px;
+  flex-shrink: 0;
+  aspect-ratio: 60.57 / 85;
+  margin-right: 10px;
+  
+}
+
+.eliminar-btn {
+  margin-top: 10px;
+  width: 830px;
+  flex-shrink: 0;
+}
+
+.cupon-container {
+  width: 830px;
+  height: 105px;
+  flex-shrink: 0;
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  padding-left: 62px; /* Mueve la tabla un poco a la derecha */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+}
+
+.cupon-input-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 703px;
+  justify-content: flex-start;
+  padding-left: 32px;
+}
+
+.cupon-input {
+  width: 464px;
+  height: 39px;
+  flex-shrink: 0;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-left: 32px;
+}
+
+.aplicar-cupon-btn {
+  width: 239px;
+  height: 51px;
+  flex-shrink: 0;
+  font-weight: 600;
+  padding-left: 32px;
+}
+
+.total-container {
+  width: 332px;
+  height: auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.total-box {
+  width: 332px;
+  height: 185px;
+  border: 6px solid #ccc;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  font-family: 'Poppins', monospace;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.proceder-pago-btn {
+  width: 332px;
+  height: 46px;
+  flex-shrink: 0;
+  font-weight: 600;
+  background-color: black;
+  border-color: black;
+  color: white;
+}

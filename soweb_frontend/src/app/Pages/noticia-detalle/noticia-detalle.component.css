@@ -1,0 +1,347 @@
+/* Ajustes del banner */
+.banner-noticias {
+  position: relative;
+  height: 50vh; /* puedes ajustar esto según lo necesites */
+  background: url('./assets/noticias_banner.svg') center center / cover no-repeat;
+  background-size: fill;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+
+/* Texto posicionado */
+.banner-text h1 {
+  margin: 0;
+  font-size: 6rem;
+  color: #fff;
+  text-align: left;
+  padding-left: 6rem;
+}
+
+/* Guión bajo animado */
+.underscore {
+  color: white;
+  animation: blink 1s step-start infinite;
+}
+
+@media (max-width: 768px) {
+  .banner-noticias {
+    height: 30vh;
+  }
+
+  .banner-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/*Lado izquierdo*/
+
+/* Estilo para el título */
+.titulo-noticia {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+/* Estilo para el cuerpo de la noticia */
+.cuerpo-noticia {
+  font-size: 1.05rem; /* tamaño legible para cuerpo de texto */
+  line-height: 1.8;
+}
+
+/* Estilo para la imagen */
+img.img-fluid {
+  max-height: 450px;
+  object-fit: cover;
+  width: 100%;
+  /*border-radius: 10px;*/
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: #E64B47;
+}
+
+.text-danger-custom {
+  color: #E64B47;
+  font-weight: 500;
+}
+
+.text-danger-custom:hover {
+  color: #c03a36;
+}
+
+
+/*Renglón-cuadrado*/
+.info-extra {
+  background-color: transparent;
+  border-top: 3px solid #b3b3b3;
+  border-bottom: 3px solid #b3b3b3;
+  min-height: 60px;
+  padding: 0.5rem 1rem;
+  justify-content: flex-end !important;
+}
+
+/* Puedes ajustar según el diseño responsive si lo deseas */
+@media (max-width: 768px) {
+  .info-extra {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    text-align: left;
+  }
+}
+
+/*Bloque "Proxima noticia"*/
+
+.siguiente-noticia h6 {
+  text-align: right;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.siguiente-btn {
+  background-color: transparent;
+  color: black;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.95rem;
+  border-radius: 0.3rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: none
+}
+
+.siguiente-img {
+  height: 100px;
+  object-fit: cover;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Responsivo para pantallas menores a 768px */
+@media (max-width: 768px) {
+  .siguiente-noticia {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .siguiente-noticia .col-md-6 {
+    width: 100%;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center;
+  }
+
+  .siguiente-img {
+    margin: 0 auto;
+  }
+
+  .siguiente-noticia h6 {
+    text-align: center;
+  }
+}
+
+/*Comentarios*/
+.comentarios h4 {
+  font-size: 1.4rem;
+}
+
+.avatar-img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+}
+
+.comentario-texto {
+  color: #303030;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/*Formulario para enviar respuesta a comentarios*/
+
+.formulario-respuesta {
+  background-color: #f9f9f9;
+  border-left: 4px solid #E64B47;
+}
+
+.formulario-respuesta .campo {
+  border-radius: 0.5rem;
+  border: 1px solid #ced4da;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.formulario-respuesta .btn-enviar {
+  background-color: #E64B47;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-respuesta .btn-enviar:hover {
+  background-color: #c03a36;
+}
+
+
+
+/*Formulario para enviar comentarios*/
+
+.formulario-comentario {
+  border-top: 2px solid #ddd;
+  padding-top: 2rem;
+}
+
+.formulario-comentario h5 {
+  color: black;
+}
+
+.campo {
+  background-color: #EAEAEA;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  font-size: 1rem;
+  padding: 0.6rem 0.75rem;
+  transition: border-color 0.2s;
+}
+
+.campo:focus {
+  border-color: #E64B47;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(230, 75, 71, 0.25);
+}
+
+.btn-enviar {
+  background-color: #E64B47;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #c03a36;
+  color: white;
+}
+
+
+
+/*Lado derecho*/
+.rightside {
+  margin-inline-start: 3rem;
+}
+
+/* Estilo responsivo para pantallas pequeñas lado derecho*/
+@media (max-width: 1200px) {
+  .rightside {
+    margin-inline-start: 0rem;
+  }
+}
+
+h5 {
+  color: #E64B47
+}
+
+/*Categorias*/
+/* Categorías normales */
+.badge {
+  background-color: white !important;
+  font-size: 0.92rem;
+  padding: 0.5em 0.75em;
+  color: black;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Adaptación en pantallas pequeñas */
+@media (max-width: 1200px) {
+  .badge {
+    display: block; /* Que se apilen una debajo de otra */
+    width: 100%;
+    white-space: normal;
+    word-break: break-word;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/*Etiquetas*/
+.etiqueta-badge {
+  background-color: #E64B47;
+  color: white;
+  padding: 0.4em 0.75em;
+  /*border-radius: 8px;*/
+  font-size: 1.06rem;
+  display: inline-block;
+}
+
+/* Estilo responsivo para pantallas pequeñas */
+@media (max-width: 576px) {
+  .etiqueta-badge {
+    font-size: 1rem;
+    padding: 0.4em 0.75em;
+  }
+}
+
+/*logo de la empresa*/
+.logo-empresa {
+  background: url('./assets/logo2-acs.svg') center center / contain no-repeat;
+  width: 100%;     /* O ajusta a un tamaño fijo como 150px si prefieres */
+  height: 12rem;    /* Puedes aumentar o reducir */
+  background-size: contain; /* Evita recortes y mantiene proporción */
+}
+
+/* Estilo del contenedor del buscador */
+.search-box input.form-control {
+  border-radius: 0.15rem;
+  border: 1px solid #ced4da;
+  border-right: white;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Al hacer focus (clic), mantener el mismo borde sin sombra */
+.search-box input.form-control:focus{
+  border: 1px solid;
+  border-color: #E64B47;
+  box-shadow: none;
+  outline: none;
+}
+
+/* Estilo del botón con lupa */
+.search-box .btn-search {
+  background-color: transparent;
+  border: 1px solid #ced4da;
+  border-left: none;
+  border-radius: 0.15rem;
+  padding: 0.5rem 0.75rem;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+/* Al pasar el mouse, cambia ligeramente el fondo (opcional) */
+.search-box .btn-search:hover {
+  background-color: #e64c47;
+  color: white;
+}
+
+/* Ícono de lupa */
+.search-box .bi-search {
+  font-size: 1rem;
+}

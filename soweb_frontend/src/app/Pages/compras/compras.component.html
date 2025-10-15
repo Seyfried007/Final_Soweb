@@ -1,0 +1,100 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Menú Lateral ACS</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="compras.component.css" />
+
+<div class="container" [class.sidebar-open]="sidebarOpen">
+  <aside class="sidebar">
+    <div class="p-4 logo-section">
+      <img src="assets/Logo-Blanco-Acs.svg" alt="Logo ACS" />
+    </div>
+
+      <nav class="nav flex-column">
+      <a [routerLink]="'/recibo'" class="sidebar-link"><i class="fas fa-id-card"></i> <span class="link-text">Recibos</span></a>
+      <a [routerLink]="'/compras'" class="sidebar-link"><i class="fas fa-file-alt"></i> <span class="link-text">Compras</span></a>
+      <a [routerLink]="'/notificaciones'" class="sidebar-link"><i class="fas fa-bell"></i> <span class="link-text">Notificaciones</span></a>
+      <a href="#" class="sidebar-link"><i class="fa-solid fa-right-from-bracket"></i> <span class="link-text">Cerrar Sesión</span></a>
+    </nav>
+
+    <div class="profile-section mt-auto p-4">
+      <div class="d-flex align-items-center" style="position: relative;" (click)="$event.stopPropagation()">
+        <img
+          src="https://randomuser.me/api/portraits/men/34.jpg"
+          alt="User"
+          class="rounded-circle"
+          (click)="toggleProfileMenu()"
+          style="cursor: pointer;"
+        />
+        <div class="profile-info">
+          <h6 class="mb-0">Jonathan</h6>
+          <small class="text-muted">Usuario</small>
+        </div>
+
+        <div *ngIf="profileMenuOpen" class="profile-dropdown">
+          <ul>
+            <li (click)="onVolver()">Volver</li>
+            <li (click)="onConfiguracion()">Configuración</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+<section class="compras-content">
+  <h2>Compras Realizadas</h2>
+  <div class="compras-realizadas">
+    <div class="compra-item">
+      <img src="assets/D101-600x842.png" alt="Kit 9001">
+      <p class="titulo">D101 Kit de Formatearía para Implementar la ISO 9001:2015</p>
+      <p class="precio">1 × $149.00</p>
+      <button class="boton-comprado">Comprado</button>
+    </div>
+    <div class="compra-item">
+      <img src="assets/D130-600x842.png" alt="Kit 17043" height="70px">
+      <p class="titulo">D130 Kit de documentos de acreditación de proveedores de PT: basado en ISO/IEC 17043:2023</p>
+      <p class="precio">1 × $1,049.00</p>
+      <button class="boton-comprado">Comprado</button>
+    </div>
+  </div>
+
+  <h2>Seguimiento de compra</h2>
+  <div class="seguimiento-item">
+    <img src="assets/D122-600x842.png" alt="Kit FSSC">
+    <div class="seguimiento-detalle">
+      <p class="titulo">D122 FSSC 22000</p>
+      <div class="barra-progreso en-proceso"></div>
+      <span class="estado">En Proceso</span>
+    </div>
+  </div>
+
+  <div class="seguimiento-item">
+    <img src="assets/D123-600x842.png" alt="Kit Doc">
+    <div class="seguimiento-detalle">
+      <p class="titulo">D123 Kit Doc.</p>
+      <div class="barra-progreso enviado"></div>
+      <span class="estado">Enviado</span>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <span class="active">1</span>
+    <span>2</span>
+    <span>3</span>
+  </div>
+</section>
+
+
+
+  <div class="mobile-header">
+    <button (click)="toggleSidebar()" class="menu-toggle" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <main class="main-content" (click)="closeSidebarOnMobile()">
+
+  
+
+
+

@@ -1,0 +1,222 @@
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Contenedor principal */
+.registro-container {
+  height: 100vh;
+  background-image: url('/assets/Fondorojo.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 30px;
+  color: white;
+}
+
+/* CUADRO ROJO */
+.registro-cuadro {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  display: flex;
+  gap: 50px;
+  padding: 50px 60px;
+  max-width: 1400px;
+  height: 720px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  color: white;
+  position: relative;
+}
+
+/* Lado izquierdo */
+.lado-izquierdo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.logo-img {
+  width: 150px;
+}
+
+.usuario-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  background-color: white;
+  object-fit: cover;
+}
+
+.insertar-texto {
+  font-weight: 600;
+  font-size: 17px;
+  margin-top: -6px;
+}
+
+.titulo-principal {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Lado derecho - formulario */
+.form-registro {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.campo input,
+.campo select {
+  padding: 12px 18px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Grupos de dos campos */
+.grupo {
+  display: flex;
+  gap: 20px;
+}
+
+.grupo > .campo {
+  flex: 1;
+}
+
+/* Celular código + input */
+.input-celular {
+  display: flex;
+  gap: 8px;
+}
+
+.input-celular select {
+  width: 80px;
+  border-radius: 20px;
+}
+
+.input-celular input {
+  flex: 1;
+}
+
+/* Botón registrar */
+.btn-registrar {
+  background-color: #e21717;
+  color: white;
+  padding: 14px 0;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Botón regresar */
+.btn-regresar {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #e21717;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ----------------------------------------- */
+/* RESPONSIVE DESIGN PARA MÓVILES Y TABLETS */
+/* ----------------------------------------- */
+@media (max-width: 992px) {
+  .registro-cuadro {
+    flex-direction: column;
+    padding: 40px 30px;
+    max-height: none;
+    overflow-y: auto;
+    height: auto;
+  }
+
+  .form-registro {
+    width: 100%;
+  }
+
+  .lado-izquierdo {
+    margin-bottom: 30px;
+  }
+
+  .titulo-principal {
+    font-size: 36px;
+  }
+
+  .grupo {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-regresar {
+    position: static;
+    margin-top: 20px;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .registro-cuadro {
+    padding: 30px 20px;
+  }
+
+  .logo-img,
+  .usuario-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .titulo-principal {
+    font-size: 28px;
+  }
+
+  .btn-registrar {
+    font-size: 14px;
+  }
+
+  .btn-regresar {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}

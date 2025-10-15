@@ -1,0 +1,273 @@
+* {
+  font-family: 'Poppins', sans-serif !important;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Fondo general */
+.container-background {
+  height: 83vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Contenedor principal */
+.container-layout {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  max-width: 1400px;
+  height: 720px;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen izquierda */
+.col-md-6.p-0.position-relative img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* Ajustes columna derecha */
+.col-md-6.p-4 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  display: flex;
+  align-items: flex-start !important;
+}
+
+/* Formulario */
+.form-olvidaste-contrasena {
+  width: 80%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 0.2rem;
+}
+
+/* Títulos */
+.form-olvidaste-contrasena h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.form-olvidaste-contrasena h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+/* Campos */
+.form-olvidaste-contrasena .form-control {
+  font-size: 1.2rem;
+  padding: 0.6rem 1rem;
+}
+
+/* Espaciado entre inputs */
+.form-olvidaste-contrasena .mb-3 {
+  width: 100%;
+  margin-bottom: 0.8rem !important;
+}
+
+/* Botón */
+.btn-restaurar-contrasena {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.btn-restaurar-contrasena:hover {
+  background-color: #c92c3e;
+  color: white;
+}
+
+/* Botón contenedor */
+.form-olvidaste-contrasena .d-grid {
+  margin-top: -80px;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+/* Logo izquierdo */
+.logo-overlay {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.logo-img {
+  width: 300px;
+  height: auto;
+}
+
+.logo-text {
+  font-size: 4.rem;
+  font-weight: 300;
+  margin: 0.8rem 0 0;
+  line-height: 1.4;
+}
+
+/* Recaptcha */
+.g-recaptcha {
+  min-height: 100px;
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .container-layout {
+    width: 90%;
+    height: 680px;
+  }
+
+  .form-olvidaste-contrasena h2 {
+    font-size: 1.8rem;
+  }
+
+  .form-olvidaste-contrasena h3 {
+    font-size: 1rem;
+  }
+
+  .form-olvidaste-contrasena {
+    width: 90%;
+  }
+}
+@media (max-width: 1024px) {
+  .container-layout {
+    flex-direction: column;
+    height: auto;
+    width: 95%;
+    margin: auto;
+    border-radius: 20px;
+  }
+
+  .col-md-6.p-0.position-relative {
+    width: 100%;
+    height: 240px;
+    min-height: unset;
+  }
+
+  .col-md-6.p-0.position-relative img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .logo-overlay {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    padding: 0 10px;
+  }
+
+  .logo-img {
+    max-width: 160px;
+    height: auto;
+  }
+
+  .logo-text {
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+
+  .logo-text {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .col-md-6.p-4 {
+    padding: 1.5rem !important;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-olvidaste-contrasena {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+  }
+
+  .form-olvidaste-contrasena h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .form-olvidaste-contrasena h3 {
+    font-size: 1rem;
+    align-self: flex-start;
+  }
+
+  .form-olvidaste-contrasena .form-control {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .btn-restaurar-contrasena {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-md-6.p-0.position-relative {
+    height: 120px;
+  }
+
+  .form-olvidaste-contrasena {
+    padding: 0rem 1.2rem;
+  }
+
+  .form-olvidaste-contrasena h2 {
+    font-size: 1.3rem;
+  }
+
+  .form-olvidaste-contrasena h3 {
+    font-size: 0.9rem;
+  }
+
+  .btn-restaurar-contrasena {
+    font-size: 0.95rem;
+  }
+
+  .logo-img {
+    max-width: 120px;
+  }
+
+  .logo-text {
+    font-size: 0.55rem;
+  }
+}

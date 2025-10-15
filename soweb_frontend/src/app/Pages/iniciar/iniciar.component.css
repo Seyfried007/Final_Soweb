@@ -1,0 +1,358 @@
+/* Aplicar la fuente Poppins globalmente */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  flex-direction: column;
+}
+
+body > header {
+  flex-shrink: 0;
+}
+
+body > footer {
+  flex-shrink: 0;
+}
+
+body > div.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.hero-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 74%;
+  right: 5%;
+  transform: translateY(-50%);
+  text-align: right;
+  z-index: 2;
+  max-width: 90%;
+}
+
+.hero-text {
+  color: white;
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.hero-button {
+  background-color: #2A4D69;
+  color: white;
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 1200px){
+  .hero-content {
+    top: 73%;
+    right: 1%;
+    left: 1%;
+    text-align: right;
+    transform: translateY(-50%);
+  }
+
+  .hero-text {
+    font-size: 2rem;
+    margin-bottom: 2px;
+  }
+
+  .hero-button {
+    font-size: 1rem;
+    padding: 14px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    top: 70%;
+    right: 1%;
+    left: 10%;
+    text-align: right;
+    transform: translateY(-50%);
+  }
+
+  .hero-text {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+  }
+
+  .hero-button {
+    font-size: 0.7rem;
+    padding: 6px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    font-size: 0.8rem;
+    padding: 4px 15px;
+  }
+}
+
+/* Sección ¿Por qué trabajar con nosotros? */
+.trabajar-text {
+  color: black;
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+  display: block;
+  user-select: none;
+  transition: font-size 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .trabajar-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trabajar-text {
+    font-size: 1.2rem;
+    display: block;
+  }
+}
+
+.imagenes-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.imagen-item {
+  max-width: 200px;
+  height: auto;
+  user-select: none;
+  transition: max-width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .imagen-item {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imagen-item {
+    max-width: 80px;
+  }
+}
+
+/* Sección ¿Por qué elegirnos? */
+.elegirnos-rectangle {
+  background-color: #000;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.elegirnos-text {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  top: 7%;
+}
+
+.elegirnos-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 70px;
+  padding: 40px 20px;
+  background-color: white;
+}
+
+.elegirnos-card {
+  max-width: 330px;
+  text-align: center;
+}
+
+.elegirnos-img-wrapper {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.elegirnos-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+.elegirnos-overlay-text {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
+.elegirnos-description {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: justify;
+  color: black;
+}
+
+/* Responsive para elegirnos */
+@media (max-width: 768px) {
+  .elegirnos-cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .elegirnos-card {
+    width: 100%;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .elegirnos-img-wrapper {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .elegirnos-img {
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  .elegirnos-overlay-text {
+    font-size: 1.3rem;
+    padding: 5px 16px;
+    bottom: 12px;
+  }
+
+  .elegirnos-description {
+    font-size: 0.95rem;
+    padding: 0 10px;
+    text-align: justify;
+  }
+}
+
+.productos-mas-comprados {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 40px 0 20px;
+  text-transform: uppercase;
+}
+
+.comprados-red {
+  color: red;
+}
+
+.image24-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 auto 30px;
+  padding: 0 20px;
+}
+
+.image24 {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+.product-card {
+  text-align: center;
+  max-width: 220px;
+  font-size: 0.9rem;
+}
+
+.product-card p {
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1rem;
+  color: red;
+}
+
+.product-old-price {
+  text-decoration: line-through;
+  color: gray;
+  margin-right: 5px;
+  font-size: 0.9rem;
+}
+
+.botones-carrito-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 70px;
+}
+
+.boton-carrito {
+  width: 160px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: red;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-carrito:hover {
+  background-color: darkred;
+}

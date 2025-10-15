@@ -1,0 +1,112 @@
+<div class="registro-container">
+  <div class="registro-cuadro">
+    <!-- Lado izquierdo: logo, foto, textos -->
+    <div class="lado-izquierdo">
+      <img src="assets/ACS.svg" alt="Logo ACS" class="logo-img" />
+      <img src="assets/usuario (1).svg" alt="Foto usuario" class="usuario-img" />
+      <p class="insertar-texto">Insertar una foto</p>
+      <h1 class="titulo-principal">Crear Nueva Cuenta</h1>
+      <p>Ingresa tus datos</p>
+    </div>
+
+    <!-- Lado derecho: formulario -->
+    <form class="form-registro" (ngSubmit)="onSubmit()" #registroForm="ngForm">
+      <div class="campo">
+        <label for="nombre">Ingresar Nombre completo</label>
+        <input
+          type="text"
+          id="nombre"
+          placeholder="Nombre Completo"
+          [(ngModel)]="nombre"
+          name="nombre"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="correo">Ingresar Correo</label>
+        <input
+          type="email"
+          id="correo"
+          placeholder="Correo electrónico"
+          [(ngModel)]="correo"
+          name="correo"
+          required
+        />
+      </div>
+
+      <!-- Fila 1: País y Ciudad -->
+      <div class="grupo">
+        <div class="campo">
+          <label for="pais">País</label>
+          <select id="pais" [(ngModel)]="pais" name="pais">
+            <option value="" selected>Seleccionar</option>
+            <option value="Perú">Perú</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="ciudad">Ciudad</label>
+          <select id="ciudad" [(ngModel)]="ciudad" name="ciudad">
+            <option value="" selected>Seleccionar</option>
+            <option value="Lima">Lima</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Fila 2: N° Celular y Género -->
+      <div class="grupo">
+        <div class="campo">
+          <label for="celular">N° Celular</label>
+          <div class="input-celular">
+            <select name="celularPrefix" disabled>
+              <option value="+51" selected>+51</option>
+            </select>
+            <input
+              type="tel"
+              id="celular"
+              placeholder="Número celular"
+              [(ngModel)]="celular"
+              name="celular"
+            />
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="genero">Género</label>
+          <select id="genero" [(ngModel)]="genero" name="genero">
+            <option value="" selected>Seleccionar</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="contrasena">Ingresar Contraseña</label>
+        <input
+          type="password"
+          id="contrasena"
+          placeholder="Contraseña"
+          [(ngModel)]="contrasena"
+          name="contrasena"
+        />
+      </div>
+
+      <div class="campo">
+        <label for="contrasena2">Ingresar de nuevo la Contraseña</label>
+        <input
+          type="password"
+          id="contrasena2"
+          placeholder="Contraseña"
+          [(ngModel)]="contrasena2"
+          name="contrasena2"
+        />
+      </div>
+
+      <button type="submit" class="btn-registrar">Registrar</button>
+    </form>
+
+    <button type="button" class="btn-regresar">Regresar</button>
+  </div>
+</div>
